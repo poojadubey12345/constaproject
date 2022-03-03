@@ -41,7 +41,7 @@ class StudentController extends Controller
         
         $students = Students::selectRaw('sum(sub1_score+sub2_score+sub3_score+sub4_score+sub5_score) AS total_score , roll_no, student_name,image,student_class')->groupBy('roll_no')->orderby('total_score','DESC')->get();
        
-        return view('getstudents',compact('students'));
+         return view('getstudents',compact('students'));
            
     }
 }
